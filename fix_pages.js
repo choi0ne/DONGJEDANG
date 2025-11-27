@@ -1,4 +1,8 @@
-'use client';
+
+const fs = require('fs');
+const path = require('path');
+
+const template = `'use client';
 
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
@@ -79,3 +83,25 @@ export default function Page() {
         </div>
     );
 }
+`;
+
+function walkDir(dir, callback) {
+    fs.readdirSync(dir).forEach(f => {
+        let dirPath = path.join(dir, f);
+        let isDirectory = fs.statSync(dirPath).isDirectory();
+        if (isDirectory) {
+            walkDir(dirPath, callback);
+        } else {
+            callback(path.join(dir, f));
+        }
+    });
+}
+
+const targetDir = path.join(__dirname, 'app', 'clinic');
+
+walkDir(targetDir, (filePath) => {
+    if (filePath.endsWith('page.tsx')) {
+        fs.writeFileSync(filePath, template, 'utf8');
+        console.log(`Fixed: ${filePath}`);
+    }
+});

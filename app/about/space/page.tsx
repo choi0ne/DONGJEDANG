@@ -1,49 +1,32 @@
-'use client';
+﻿'use client';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
+import { usePathname } from 'next/navigation';
 
-export default function Space() {
+const titleMap: { [key: string]: string } = {
+    'about': '동제당 한의원',
+    'space': '쉼의 시작, 회복의 공간',
+    'medicine': '동제당 청정 한약'
+};
+
+export default function Page() {
+    const pathname = usePathname();
+    const lastSegment = pathname?.split('/').pop() || '';
+    const title = titleMap[lastSegment] || lastSegment.toUpperCase();
+
     return (
-        <div className="min-h-screen bg-background text-text font-sans">
+        <div className="min-h-screen font-sans text-[#222]">
             <Header />
-
-            <main>
-                <section className="relative py-20 bg-[#FDFBF7]">
-                    <div className="max-w-[1200px] mx-auto px-6 text-center">
-                        <span className="block text-primary font-bold tracking-[0.3em] uppercase mb-4 animate-fadeIn">Healing Space</span>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6 font-serif text-text animate-fadeInUp">
-                            쉼의 시작, 회복의 공간
-                        </h1>
-                        <div className="w-16 h-1 bg-primary/30 mx-auto mb-8 animate-fadeInUp delay-100"></div>
-                        <p className="text-lg text-text/70 max-w-2xl mx-auto leading-relaxed font-serif animate-fadeInUp delay-200">
-                            편안한 마음으로 치료받으실 수 있도록<br />
-                            정갈하고 아늑한 공간을 준비했습니다.
-                        </p>
-                    </div>
-                </section>
-
-                <section className="py-16 bg-white">
-                    <div className="max-w-[1000px] mx-auto px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {/* Placeholder for facility images */}
-                            <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center text-text/30">
-                                대기실 이미지
-                            </div>
-                            <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center text-text/30">
-                                진료실 이미지
-                            </div>
-                            <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center text-text/30">
-                                치료실 이미지
-                            </div>
-                            <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center text-text/30">
-                                파우더룸 이미지
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <main className="max-w-[1200px] mx-auto px-6 py-32 text-center animate-fadeInUp">
+                <span className="text-[#d4af37] font-bold tracking-widest uppercase mb-4 block">Dongjedang Clinic</span>
+                <h1 className="text-4xl md:text-5xl font-bold font-serif mb-8 text-[#222]">{title}</h1>
+                <div className="w-16 h-1 bg-[#d4af37] mx-auto mb-12"></div>
+                <p className="text-lg text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
+                    동제당한의원은 환자분의 건강한 삶을 위해 최선을 다합니다.<br />
+                    상세한 진료 내용은 내원 시 친절하게 안내해 드리겠습니다.
+                </p>
             </main>
-
             <Footer />
         </div>
     );

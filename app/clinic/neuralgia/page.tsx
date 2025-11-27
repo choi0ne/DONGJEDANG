@@ -1,37 +1,80 @@
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+'use client';
 
-export default function NeuralgiaClinic() {
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
+import { usePathname } from 'next/navigation';
+
+const titleMap: { [key: string]: string } = {
+  'clinic': '진료 안내',
+  'detox': '해독/비만 클리닉',
+  'fasting': '절식 해독 프로그램',
+  'constitution': '체질식 해독 프로그램',
+  'skin': '피부 질환 클리닉',
+  'dyshidrosis': '한포진',
+  'atopy': '아토피 피부염',
+  'eczema': '만성 습진',
+  'seborrheic': '지루성 피부염',
+  'psoriasis': '건선',
+  'urticaria': '두드러기',
+  'ent': '이비인후과 질환',
+  'rhinitis': '비염',
+  'sinusitis': '축농증',
+  'otolithiasis': '만성 이석증',
+  'digestive': '소화기 질환',
+  'reflux': '역류성 식도염',
+  'gastritis': '만성 위염',
+  'ibs': '과민성 대장 증후군',
+  'neuro': '신경정신 질환',
+  'insomnia': '불면증',
+  'anxiety': '불안 장애',
+  'panic': '공황 장애',
+  'depression': '우울증',
+  'adhd': 'ADHD',
+  'ocd': '강박증',
+  'women': '여성 질환',
+  'pcos': '다낭성 난소 증후군',
+  'menopause': '갱년기 증상',
+  'cystitis': '만성 방광염/질염',
+  'pregnancy': '임신 준비',
+  'postpartum': '산후 조리',
+  'sanhuphung': '산후풍',
+  'pain': '통증/신경 질환',
+  'headache': '만성 두통',
+  'tinnitus': '이명',
+  'dizziness': '어지러움',
+  'tos': '흉곽출구 증후군',
+  'tennis-elbow': '테니스 엘보',
+  'si-joint': '천장관절통',
+  'knee': '슬관절통',
+  'growth': '소아/수험생 클리닉',
+  'height': '키성장 한약',
+  'mind': '마음 튼튼 한약',
+  'student': '수험생 총명탕',
+  'gongjindan': '공진단 클리닉',
+  'original': '원방 공진단',
+  'deer-antler': '녹용 공진단',
+  'cheongsimhwan': '청심환',
+  'obesity': '비만 클리닉',
+  'neuralgia': '신경통'
+};
+
+export default function Page() {
+    const pathname = usePathname();
+    const lastSegment = pathname?.split('/').pop() || '';
+    const title = titleMap[lastSegment] || lastSegment.toUpperCase();
+
     return (
-        <div className="min-h-screen bg-background text-text">
+        <div className="min-h-screen font-sans text-[#222]">
             <Header />
-
-            <main className="max-w-[1100px] mx-auto px-5 py-20">
-                <h1 className="text-4xl font-bold mb-12 text-center font-serif text-primary">
-                    통증/신경통 클리닉
-                </h1>
-
-                <div className="bg-white p-10 rounded-xl shadow-sm border border-secondary/20 transition-transform hover:-translate-y-1 duration-300">
-                    <h2 className="text-2xl font-bold mb-6 font-serif text-primary border-b border-accent/30 pb-3 inline-block">
-                        대상포진후 신경통
-                    </h2>
-                    <div className="prose max-w-none text-text/90 leading-relaxed">
-                        <p>
-                            대상포진이란 대상포진 바이러스가 신경세포에 잠복해 있다가 수 년 내지 수 십년 후 체내 면역이 떨어지는 상황이 일어났을 때 발병하는 질환을 말합니다.
-                        </p>
-                        <p className="mt-4">
-                            그런데 대상포진이 아물고 나서 피부 병변은 사라졌으나 바이러스 신경에 바이러스가 잠복하여 따갑고 아픈 신경통이 남는 경우가 있습니다.
-                        </p>
-                        <div className="mt-8 p-6 bg-secondary/10 rounded-lg border-l-4 border-primary">
-                            <p className="font-bold text-lg text-primary mb-2">동제당한의원의 치료법</p>
-                            <p>
-                                동제당한의원에서는 <strong className="text-accent">봉독요법</strong>과 <strong className="text-accent">화침</strong>을 통해 이러한 만성 통증의 근본 원인을 치료합니다.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <main className="max-w-[1200px] mx-auto px-6 py-32 text-center animate-fadeInUp">
+                <span className="text-[#d4af37] font-bold tracking-widest uppercase mb-4 block">Dongjedang Clinic</span>
+                <h1 className="text-4xl md:text-5xl font-bold font-serif mb-8 text-[#222]">{title}</h1>
+                <div className="w-16 h-1 bg-[#d4af37] mx-auto mb-12"></div>
+                <p className="text-lg text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
+                    동제당한의원은 환자분의 건강한 삶을 위해 최선을 다합니다.<br/>
+                    상세한 진료 내용은 내원 시 친절하게 안내해 드리겠습니다.
+                </p>
             </main>
-
             <Footer />
         </div>
     );

@@ -1,72 +1,80 @@
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+'use client';
 
-export default function DetoxClinic() {
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
+import { usePathname } from 'next/navigation';
+
+const titleMap: { [key: string]: string } = {
+  'clinic': '진료 안내',
+  'detox': '해독/비만 클리닉',
+  'fasting': '절식 해독 프로그램',
+  'constitution': '체질식 해독 프로그램',
+  'skin': '피부 질환 클리닉',
+  'dyshidrosis': '한포진',
+  'atopy': '아토피 피부염',
+  'eczema': '만성 습진',
+  'seborrheic': '지루성 피부염',
+  'psoriasis': '건선',
+  'urticaria': '두드러기',
+  'ent': '이비인후과 질환',
+  'rhinitis': '비염',
+  'sinusitis': '축농증',
+  'otolithiasis': '만성 이석증',
+  'digestive': '소화기 질환',
+  'reflux': '역류성 식도염',
+  'gastritis': '만성 위염',
+  'ibs': '과민성 대장 증후군',
+  'neuro': '신경정신 질환',
+  'insomnia': '불면증',
+  'anxiety': '불안 장애',
+  'panic': '공황 장애',
+  'depression': '우울증',
+  'adhd': 'ADHD',
+  'ocd': '강박증',
+  'women': '여성 질환',
+  'pcos': '다낭성 난소 증후군',
+  'menopause': '갱년기 증상',
+  'cystitis': '만성 방광염/질염',
+  'pregnancy': '임신 준비',
+  'postpartum': '산후 조리',
+  'sanhuphung': '산후풍',
+  'pain': '통증/신경 질환',
+  'headache': '만성 두통',
+  'tinnitus': '이명',
+  'dizziness': '어지러움',
+  'tos': '흉곽출구 증후군',
+  'tennis-elbow': '테니스 엘보',
+  'si-joint': '천장관절통',
+  'knee': '슬관절통',
+  'growth': '소아/수험생 클리닉',
+  'height': '키성장 한약',
+  'mind': '마음 튼튼 한약',
+  'student': '수험생 총명탕',
+  'gongjindan': '공진단 클리닉',
+  'original': '원방 공진단',
+  'deer-antler': '녹용 공진단',
+  'cheongsimhwan': '청심환',
+  'obesity': '비만 클리닉',
+  'neuralgia': '신경통'
+};
+
+export default function Page() {
+    const pathname = usePathname();
+    const lastSegment = pathname?.split('/').pop() || '';
+    const title = titleMap[lastSegment] || lastSegment.toUpperCase();
+
     return (
-        <div className="min-h-screen bg-background text-text">
+        <div className="min-h-screen font-sans text-[#222]">
             <Header />
-
-            <main className="max-w-[1100px] mx-auto px-5 py-20">
-                <h1 className="text-4xl font-bold mb-12 text-center font-serif text-primary">
-                    해독요법 클리닉
-                </h1>
-
-                {/* Introduction */}
-                <div className="bg-white p-10 rounded-xl shadow-sm border border-secondary/20 mb-10 transition-transform hover:-translate-y-1 duration-300">
-                    <h2 className="text-2xl font-bold mb-6 font-serif text-primary border-b border-accent/30 pb-3 inline-block">
-                        상황에 맞는 해독요법
-                    </h2>
-                    <div className="prose max-w-none text-text/90 leading-relaxed">
-                        <p>
-                            해독요법은 몸안으로 들어가는 음식물을 조절함으로 몸의 노폐물을 제거함으로써 몸의 정상적인 상태로 만드는 요법입니다.
-                        </p>
-                        <p className="mt-4">
-                            그러나, 사람의 상태에 따라서 완전한 금식을 통한 <strong className="text-accent">절식해독요법</strong>과 체질맞는 음식을 통해서 하는 <strong className="text-accent">체질식해독요법</strong>으로 나누어서 접근해야합니다.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Constitutional Detox */}
-                <div className="bg-white p-10 rounded-xl shadow-sm border border-secondary/20 mb-10 transition-transform hover:-translate-y-1 duration-300">
-                    <h2 className="text-2xl font-bold mb-6 font-serif text-primary border-b border-accent/30 pb-3 inline-block">
-                        체질식 해독요법
-                    </h2>
-                    <div className="prose max-w-none text-text/90 leading-relaxed">
-                        <p>
-                            저희 한의원의 해독다이어트 프로그램은 과도한 식사량 제한을 통한 다이어트를 지양하고 올바른 식습관을 통해 건강해지고 요요없는 다이어트를 목표로 합니다.
-                        </p>
-                        <h3 className="text-xl font-bold mt-8 mb-4 text-primary/90">왜 굶는 것이 나쁘냐?</h3>
-                        <p>
-                            과도한 식사량 제한은 단기간은 효과를 볼 수도 있으나 결국은 근육량이 줄게 되어 기초대사량이 줄어들게 되기 때문입니다.
-                        </p>
-                        <p className="mt-2">
-                            그래서 나중에는 식사량을 아무리 줄여도 체지방이 늘어날 수밖에 없는 상태가 되어 버립니다.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Fasting Detox */}
-                <div className="bg-white p-10 rounded-xl shadow-sm border border-secondary/20 transition-transform hover:-translate-y-1 duration-300">
-                    <h2 className="text-2xl font-bold mb-6 font-serif text-primary border-b border-accent/30 pb-3 inline-block">
-                        절식 해독요법
-                    </h2>
-                    <div className="prose max-w-none text-text/90 leading-relaxed">
-                        <h3 className="text-xl font-bold mt-2 mb-4 text-primary/90">해독다이어트 중 주의사항</h3>
-                        <div className="bg-secondary/10 p-6 rounded-lg border-l-4 border-accent">
-                            <ul className="list-none space-y-4">
-                                <li>
-                                    <strong className="block text-lg text-primary mb-2">초반에 체수분의 변동으로 인해서 혈압의 변화가 옵니다.</strong>
-                                    <p>
-                                        원래 부종이 많으시거나 신장의 기능이 안 좋으신분들은 가슴뜀과 불면등을 느낄 수 있습니다.<br />
-                                        그러므로, 꼭 더욱더 철저히 짠 음식을 조심하시고 물을 충분히 드셔야합니다.
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <main className="max-w-[1200px] mx-auto px-6 py-32 text-center animate-fadeInUp">
+                <span className="text-[#d4af37] font-bold tracking-widest uppercase mb-4 block">Dongjedang Clinic</span>
+                <h1 className="text-4xl md:text-5xl font-bold font-serif mb-8 text-[#222]">{title}</h1>
+                <div className="w-16 h-1 bg-[#d4af37] mx-auto mb-12"></div>
+                <p className="text-lg text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
+                    동제당한의원은 환자분의 건강한 삶을 위해 최선을 다합니다.<br/>
+                    상세한 진료 내용은 내원 시 친절하게 안내해 드리겠습니다.
+                </p>
             </main>
-
             <Footer />
         </div>
     );

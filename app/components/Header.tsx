@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <>
       <NoticeBar />
-      <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-[100] border-b border-secondary/10 shadow-sm">
+      <header className="bg-[#F8F7F0] sticky top-0 z-[100]">
         <div className="max-w-[1200px] mx-auto px-6">
 
           {/* Desktop Layout */}
@@ -29,7 +29,7 @@ export default function Header() {
               <img
                 src="/신로고_가로1.jpg"
                 alt="동제당한의원 로고"
-                className="h-9 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                className="h-9 w-auto object-contain group-hover:opacity-90 transition-opacity mix-blend-multiply"
               />
             </Link>
             <nav className="flex gap-6 flex-wrap items-center justify-center">
@@ -43,7 +43,7 @@ export default function Header() {
               <img
                 src="/신로고_가로1.jpg"
                 alt="동제당한의원 로고"
-                className="h-7 w-auto object-contain"
+                className="h-7 w-auto object-contain mix-blend-multiply"
               />
             </Link>
 
@@ -67,12 +67,12 @@ export default function Header() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
 
           {/* Drawer */}
-          <div className="absolute top-0 left-0 w-[80%] max-w-[300px] h-full bg-white shadow-2xl flex flex-col animate-slideInLeft">
-            <div className="p-6 flex justify-between items-center border-b border-secondary/10">
+          <div className="absolute top-0 left-0 w-[80%] max-w-[300px] h-full bg-[#F8F7F0] shadow-2xl flex flex-col animate-slideInLeft">
+            <div className="p-6 flex justify-between items-center">
               <img
                 src="/신로고_가로1.jpg"
                 alt="동제당한의원 로고"
-                className="h-6 w-auto object-contain"
+                className="h-6 w-auto object-contain mix-blend-multiply"
               />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -103,7 +103,7 @@ export default function Header() {
               <nav className="flex flex-col gap-4">
                 <div className="flex flex-col">
                   <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)}>동제당한의원</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원장소개</MobileNavLink>
                     <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는 길</MobileNavLink>
                     <MobileNavLink href="/about/space" onClick={() => setIsMobileMenuOpen(false)} isSubItem>쉼의 시작, 회복의 공간</MobileNavLink>
@@ -112,7 +112,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/detox" onClick={() => setIsMobileMenuOpen(false)}>해독/비만</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/detox" onClick={() => setIsMobileMenuOpen(false)} isSubItem>소개</MobileNavLink>
                     <MobileNavLink href="/clinic/detox/fasting" onClick={() => setIsMobileMenuOpen(false)} isSubItem>절식해독프로그램</MobileNavLink>
                     <MobileNavLink href="/clinic/detox/constitution" onClick={() => setIsMobileMenuOpen(false)} isSubItem>체질식해독프로그램</MobileNavLink>
@@ -120,7 +120,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/skin" onClick={() => setIsMobileMenuOpen(false)}>피부질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/skin/dyshidrosis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>한포진</MobileNavLink>
                     <MobileNavLink href="/clinic/skin/atopy" onClick={() => setIsMobileMenuOpen(false)} isSubItem>아토피피부염</MobileNavLink>
                     <MobileNavLink href="/clinic/skin/eczema" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성습진</MobileNavLink>
@@ -131,7 +131,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/ent" onClick={() => setIsMobileMenuOpen(false)}>이비인후과질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/ent/rhinitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>비염</MobileNavLink>
                     <MobileNavLink href="/clinic/ent/sinusitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>축농증</MobileNavLink>
                     <MobileNavLink href="/clinic/ent/otolithiasis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성이석증</MobileNavLink>
@@ -139,7 +139,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/digestive" onClick={() => setIsMobileMenuOpen(false)}>소화기질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/digestive/reflux" onClick={() => setIsMobileMenuOpen(false)} isSubItem>역류성식도염</MobileNavLink>
                     <MobileNavLink href="/clinic/digestive/gastritis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성위염</MobileNavLink>
                     <MobileNavLink href="/clinic/digestive/ibs" onClick={() => setIsMobileMenuOpen(false)} isSubItem>과민성대장증후군</MobileNavLink>
@@ -147,7 +147,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/neuro" onClick={() => setIsMobileMenuOpen(false)}>신경정신질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/neuro/insomnia" onClick={() => setIsMobileMenuOpen(false)} isSubItem>불면증</MobileNavLink>
                     <MobileNavLink href="/clinic/neuro/anxiety" onClick={() => setIsMobileMenuOpen(false)} isSubItem>불안장애</MobileNavLink>
                     <MobileNavLink href="/clinic/neuro/panic" onClick={() => setIsMobileMenuOpen(false)} isSubItem>공황장애</MobileNavLink>
@@ -158,7 +158,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/women" onClick={() => setIsMobileMenuOpen(false)}>여성질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/women/pcos" onClick={() => setIsMobileMenuOpen(false)} isSubItem>다낭성난소증후군</MobileNavLink>
                     <MobileNavLink href="/clinic/women/menopause" onClick={() => setIsMobileMenuOpen(false)} isSubItem>갱년기증상</MobileNavLink>
                     <MobileNavLink href="/clinic/women/cystitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성방광염/질염</MobileNavLink>
@@ -169,7 +169,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/pain" onClick={() => setIsMobileMenuOpen(false)}>통증/신경질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/pain/headache" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성두통</MobileNavLink>
                     <MobileNavLink href="/clinic/pain/tinnitus" onClick={() => setIsMobileMenuOpen(false)} isSubItem>이명</MobileNavLink>
                     <MobileNavLink href="/clinic/pain/dizziness" onClick={() => setIsMobileMenuOpen(false)} isSubItem>어지러움</MobileNavLink>
@@ -181,7 +181,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/growth" onClick={() => setIsMobileMenuOpen(false)}>소아/수험생</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/growth/height" onClick={() => setIsMobileMenuOpen(false)} isSubItem>키성장한약</MobileNavLink>
                     <MobileNavLink href="/clinic/growth/mind" onClick={() => setIsMobileMenuOpen(false)} isSubItem>마음튼튼한약</MobileNavLink>
                     <MobileNavLink href="/clinic/growth/student" onClick={() => setIsMobileMenuOpen(false)} isSubItem>수험생 총명탕</MobileNavLink>
@@ -189,7 +189,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <MobileNavLink href="/clinic/gongjindan" onClick={() => setIsMobileMenuOpen(false)}>공진단</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 border-l border-secondary/10 ml-2">
+                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
                     <MobileNavLink href="/clinic/gongjindan/original" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원방공진단</MobileNavLink>
                     <MobileNavLink href="/clinic/gongjindan/deer-antler" onClick={() => setIsMobileMenuOpen(false)} isSubItem>녹용공진단</MobileNavLink>
                     <MobileNavLink href="/clinic/gongjindan/cheongsimhwan" onClick={() => setIsMobileMenuOpen(false)} isSubItem>청심환</MobileNavLink>
@@ -206,7 +206,7 @@ export default function Header() {
                   문의하기
                 </MobileNavLink>
 
-                <div className="mt-4 pt-4 border-t border-secondary/10">
+                <div className="mt-4 pt-4">
                   <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는길</MobileNavLink>
                 </div>
               </nav>
@@ -248,11 +248,11 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/about" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">원장소개</Link>
-                  <Link href="/location" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">오시는 길</Link>
-                  <Link href="/about/space" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">쉼의 시작, 회복의 공간</Link>
-                  <Link href="/about/medicine" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">동제당 청정한약</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/about" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">원장소개</Link>
+                  <Link href="/location" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">오시는 길</Link>
+                  <Link href="/about/space" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">쉼의 시작, 회복의 공간</Link>
+                  <Link href="/about/medicine" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">동제당 청정한약</Link>
                 </div>
               </div>
             </div>
@@ -270,10 +270,10 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/detox" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">소개</Link>
-                  <Link href="/clinic/detox/fasting" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">절식해독프로그램</Link>
-                  <Link href="/clinic/detox/constitution" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">체질식해독프로그램</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/detox" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">소개</Link>
+                  <Link href="/clinic/detox/fasting" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">절식해독프로그램</Link>
+                  <Link href="/clinic/detox/constitution" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">체질식해독프로그램</Link>
                 </div>
               </div>
             </div>
@@ -291,10 +291,10 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/ent/rhinitis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">비염</Link>
-                  <Link href="/clinic/ent/sinusitis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">축농증</Link>
-                  <Link href="/clinic/ent/otolithiasis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성이석증</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/ent/rhinitis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">비염</Link>
+                  <Link href="/clinic/ent/sinusitis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">축농증</Link>
+                  <Link href="/clinic/ent/otolithiasis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성이석증</Link>
                 </div>
               </div>
             </div>
@@ -312,10 +312,10 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/digestive/reflux" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">역류성식도염</Link>
-                  <Link href="/clinic/digestive/gastritis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성위염</Link>
-                  <Link href="/clinic/digestive/ibs" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">과민성대장증후군</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/digestive/reflux" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">역류성식도염</Link>
+                  <Link href="/clinic/digestive/gastritis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성위염</Link>
+                  <Link href="/clinic/digestive/ibs" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">과민성대장증후군</Link>
                 </div>
               </div>
             </div>
@@ -333,13 +333,13 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/neuro/insomnia" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">불면증</Link>
-                  <Link href="/clinic/neuro/anxiety" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">불안장애</Link>
-                  <Link href="/clinic/neuro/panic" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">공황장애</Link>
-                  <Link href="/clinic/neuro/depression" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">우울증</Link>
-                  <Link href="/clinic/neuro/adhd" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">ADHD</Link>
-                  <Link href="/clinic/neuro/ocd" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">강박증</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/neuro/insomnia" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">불면증</Link>
+                  <Link href="/clinic/neuro/anxiety" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">불안장애</Link>
+                  <Link href="/clinic/neuro/panic" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">공황장애</Link>
+                  <Link href="/clinic/neuro/depression" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">우울증</Link>
+                  <Link href="/clinic/neuro/adhd" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">ADHD</Link>
+                  <Link href="/clinic/neuro/ocd" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">강박증</Link>
                 </div>
               </div>
             </div>
@@ -357,13 +357,13 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/women/pcos" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">다낭성난소증후군</Link>
-                  <Link href="/clinic/women/menopause" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">갱년기증상</Link>
-                  <Link href="/clinic/women/cystitis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성방광염/질염</Link>
-                  <Link href="/clinic/women/pregnancy" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">임신준비</Link>
-                  <Link href="/clinic/women/postpartum" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후조리</Link>
-                  <Link href="/clinic/women/sanhuphung" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후풍</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/women/pcos" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">다낭성난소증후군</Link>
+                  <Link href="/clinic/women/menopause" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">갱년기증상</Link>
+                  <Link href="/clinic/women/cystitis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성방광염/질염</Link>
+                  <Link href="/clinic/women/pregnancy" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">임신준비</Link>
+                  <Link href="/clinic/women/postpartum" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후조리</Link>
+                  <Link href="/clinic/women/sanhuphung" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후풍</Link>
                 </div>
               </div>
             </div>
@@ -381,14 +381,14 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/pain/headache" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성두통</Link>
-                  <Link href="/clinic/pain/tinnitus" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">이명</Link>
-                  <Link href="/clinic/pain/dizziness" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">어지러움</Link>
-                  <Link href="/clinic/pain/tos" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">흉곽출구증후군</Link>
-                  <Link href="/clinic/pain/tennis-elbow" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">테니스엘보</Link>
-                  <Link href="/clinic/pain/si-joint" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">천장관절통</Link>
-                  <Link href="/clinic/pain/knee" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">슬관절통</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/pain/headache" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성두통</Link>
+                  <Link href="/clinic/pain/tinnitus" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">이명</Link>
+                  <Link href="/clinic/pain/dizziness" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">어지러움</Link>
+                  <Link href="/clinic/pain/tos" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">흉곽출구증후군</Link>
+                  <Link href="/clinic/pain/tennis-elbow" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">테니스엘보</Link>
+                  <Link href="/clinic/pain/si-joint" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">천장관절통</Link>
+                  <Link href="/clinic/pain/knee" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">슬관절통</Link>
                 </div>
               </div>
             </div>
@@ -406,10 +406,10 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/growth/height" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">키성장한약</Link>
-                  <Link href="/clinic/growth/mind" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">마음튼튼한약</Link>
-                  <Link href="/clinic/growth/student" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">수험생 총명탕</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/growth/height" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">키성장한약</Link>
+                  <Link href="/clinic/growth/mind" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">마음튼튼한약</Link>
+                  <Link href="/clinic/growth/student" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">수험생 총명탕</Link>
                 </div>
               </div>
             </div>
@@ -427,10 +427,10 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/gongjindan/original" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">원방공진단</Link>
-                  <Link href="/clinic/gongjindan/deer-antler" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">녹용공진단</Link>
-                  <Link href="/clinic/gongjindan/cheongsimhwan" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">청심환</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/gongjindan/original" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">원방공진단</Link>
+                  <Link href="/clinic/gongjindan/deer-antler" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">녹용공진단</Link>
+                  <Link href="/clinic/gongjindan/cheongsimhwan" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">청심환</Link>
                 </div>
               </div>
             </div>
@@ -448,13 +448,13 @@ function NavLinks() {
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-white shadow-lg rounded-lg border border-secondary/10 overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/skin/dyshidrosis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">한포진</Link>
-                  <Link href="/clinic/skin/atopy" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">아토피피부염</Link>
-                  <Link href="/clinic/skin/eczema" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성습진</Link>
-                  <Link href="/clinic/skin/seborrheic" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">지루성피부염</Link>
-                  <Link href="/clinic/skin/psoriasis" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">건선</Link>
-                  <Link href="/clinic/skin/urticaria" className="px-4 py-2 text-sm text-text/70 hover:bg-secondary/5 hover:text-primary transition-colors text-center">두드러기</Link>
+                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/clinic/skin/dyshidrosis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">한포진</Link>
+                  <Link href="/clinic/skin/atopy" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">아토피피부염</Link>
+                  <Link href="/clinic/skin/eczema" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성습진</Link>
+                  <Link href="/clinic/skin/seborrheic" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">지루성피부염</Link>
+                  <Link href="/clinic/skin/psoriasis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">건선</Link>
+                  <Link href="/clinic/skin/urticaria" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">두드러기</Link>
                 </div>
               </div>
             </div>
@@ -499,7 +499,7 @@ function MobileNavLink({ href, onClick, children, isSubItem = false, target }: {
     <Link
       href={href}
       onClick={onClick}
-      className={`${isSubItem ? 'text-base text-text/70' : 'text-lg text-text/80 border-b border-secondary/5 pb-2'} font-serif font-medium hover:text-primary hover:pl-2 transition-all duration-300 block`}
+      className={`text-[15px] text-text/80 font-serif font-medium hover:text-primary hover:pl-2 transition-all duration-300 block ${!isSubItem && 'pb-2'}`}
       target={target}
       rel={target === '_blank' ? "noopener noreferrer" : undefined}
     >

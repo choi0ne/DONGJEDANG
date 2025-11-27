@@ -12,10 +12,10 @@
   /* Fresh Green/Sage - Healing */
   --accent: #D4A373;
   /* Warm Wood/Earth - Stability */
-  --background: #FFFFFA;
-  /* Paper White - Cleanliness */
-  --text: #2C3E50;
-  /* Dark Slate - Readability */
+  --background: #F8F7F0;
+  /* Premium Warm White */
+  --text: #222222;
+  /* Deep Charcoal - Readability */
   --white: #ffffff;
 }
 
@@ -35,6 +35,7 @@ body {
   background-color: var(--background);
   color: var(--text);
   font-family: var(--font-sans);
+  word-break: keep-all;
 }
 
 h1,
