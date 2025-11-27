@@ -27,9 +27,9 @@ export default function Header() {
           <div className="hidden md:flex flex-col items-center py-4 gap-4">
             <Link href="/" className="group block shrink-0">
               <img
-                src="/logo_h.jpg"
+                src="/신로고_가로1.jpg"
                 alt="동제당한의원 로고"
-                className="h-10 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                className="h-9 w-auto object-contain group-hover:opacity-90 transition-opacity"
               />
             </Link>
             <nav className="flex gap-6 flex-wrap items-center justify-center">
@@ -41,9 +41,9 @@ export default function Header() {
           <div className="md:hidden relative flex justify-center items-center py-4 min-h-[60px]">
             <Link href="/" className="group block" onClick={() => setIsMobileMenuOpen(false)}>
               <img
-                src="/logo_h.jpg"
+                src="/신로고_가로1.jpg"
                 alt="동제당한의원 로고"
-                className="h-8 w-auto object-contain"
+                className="h-7 w-auto object-contain"
               />
             </Link>
 
@@ -70,7 +70,7 @@ export default function Header() {
           <div className="absolute top-0 left-0 w-[80%] max-w-[300px] h-full bg-white shadow-2xl flex flex-col animate-slideInLeft">
             <div className="p-6 flex justify-between items-center border-b border-secondary/10">
               <img
-                src="/logo_h.jpg"
+                src="/신로고_가로1.jpg"
                 alt="동제당한의원 로고"
                 className="h-6 w-auto object-contain"
               />
