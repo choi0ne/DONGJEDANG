@@ -4,19 +4,14 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-[#9F9E99] text-white/80 py-12 border-t border-secondary/10 font-sans text-sm">
-            <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <footer className="bg-[#9F9E99] text-[#F8F7F0] py-12 border-t border-secondary/10 font-sans text-sm">
+            <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
 
                 {/* Left Side: Info & Links */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
                     {/* Links */}
-                    <div className="flex gap-4 font-medium text-text/80 items-center">
-                        <img
-                            src="/신로고_가로1.jpg"
-                            alt="동제당한의원 로고"
-                            className="h-6 w-auto object-contain opacity-80 mix-blend-multiply -translate-y-[2px]"
-                        />
-                        <div className="h-4 w-[1px] bg-text/20"></div>
+                    <div className="flex gap-4 font-medium text-[#F8F7F0] items-center">
+
                         <Link href="/terms" className="hover:text-primary transition-colors text-xs">이용약관</Link>
                         <Link href="/privacy" className="hover:text-primary transition-colors text-xs">개인정보처리방침</Link>
                     </div>

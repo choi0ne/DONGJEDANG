@@ -83,7 +83,7 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-            </div>
+            </d iv>
 
             <div className="flex-1 overflow-y-auto py-6 px-6">
               {/* Search Bar */}
@@ -100,119 +100,97 @@ export default function Header() {
                 </button>
               </div>
 
-              <nav className="flex flex-col gap-4">
-                <div className="flex flex-col">
-                  <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)}>동제당한의원</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원장소개</MobileNavLink>
-                    <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는 길</MobileNavLink>
-                    <MobileNavLink href="/about/space" onClick={() => setIsMobileMenuOpen(false)} isSubItem>쉼의 시작, 회복의 공간</MobileNavLink>
-                    <MobileNavLink href="/about/medicine" onClick={() => setIsMobileMenuOpen(false)} isSubItem>동제당 청정한약</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/detox" onClick={() => setIsMobileMenuOpen(false)}>해독/비만</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/detox" onClick={() => setIsMobileMenuOpen(false)} isSubItem>소개</MobileNavLink>
-                    <MobileNavLink href="/clinic/detox/fasting" onClick={() => setIsMobileMenuOpen(false)} isSubItem>절식해독프로그램</MobileNavLink>
-                    <MobileNavLink href="/clinic/detox/constitution" onClick={() => setIsMobileMenuOpen(false)} isSubItem>체질식해독프로그램</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/skin" onClick={() => setIsMobileMenuOpen(false)}>피부질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/skin/dyshidrosis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>한포진</MobileNavLink>
-                    <MobileNavLink href="/clinic/skin/atopy" onClick={() => setIsMobileMenuOpen(false)} isSubItem>아토피피부염</MobileNavLink>
-                    <MobileNavLink href="/clinic/skin/eczema" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성습진</MobileNavLink>
-                    <MobileNavLink href="/clinic/skin/seborrheic" onClick={() => setIsMobileMenuOpen(false)} isSubItem>지루성피부염</MobileNavLink>
-                    <MobileNavLink href="/clinic/skin/psoriasis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>건선</MobileNavLink>
-                    <MobileNavLink href="/clinic/skin/urticaria" onClick={() => setIsMobileMenuOpen(false)} isSubItem>두드러기</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/ent" onClick={() => setIsMobileMenuOpen(false)}>이비인후과질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/ent/rhinitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>비염</MobileNavLink>
-                    <MobileNavLink href="/clinic/ent/sinusitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>축농증</MobileNavLink>
-                    <MobileNavLink href="/clinic/ent/otolithiasis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성이석증</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/digestive" onClick={() => setIsMobileMenuOpen(false)}>소화기질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/digestive/reflux" onClick={() => setIsMobileMenuOpen(false)} isSubItem>역류성식도염</MobileNavLink>
-                    <MobileNavLink href="/clinic/digestive/gastritis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성위염</MobileNavLink>
-                    <MobileNavLink href="/clinic/digestive/ibs" onClick={() => setIsMobileMenuOpen(false)} isSubItem>과민성대장증후군</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/neuro" onClick={() => setIsMobileMenuOpen(false)}>신경정신질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/neuro/insomnia" onClick={() => setIsMobileMenuOpen(false)} isSubItem>불면증</MobileNavLink>
-                    <MobileNavLink href="/clinic/neuro/anxiety" onClick={() => setIsMobileMenuOpen(false)} isSubItem>불안장애</MobileNavLink>
-                    <MobileNavLink href="/clinic/neuro/panic" onClick={() => setIsMobileMenuOpen(false)} isSubItem>공황장애</MobileNavLink>
-                    <MobileNavLink href="/clinic/neuro/depression" onClick={() => setIsMobileMenuOpen(false)} isSubItem>우울증</MobileNavLink>
-                    <MobileNavLink href="/clinic/neuro/adhd" onClick={() => setIsMobileMenuOpen(false)} isSubItem>ADHD</MobileNavLink>
-                    <MobileNavLink href="/clinic/neuro/ocd" onClick={() => setIsMobileMenuOpen(false)} isSubItem>강박증</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/women" onClick={() => setIsMobileMenuOpen(false)}>여성질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/women/pcos" onClick={() => setIsMobileMenuOpen(false)} isSubItem>다낭성난소증후군</MobileNavLink>
-                    <MobileNavLink href="/clinic/women/menopause" onClick={() => setIsMobileMenuOpen(false)} isSubItem>갱년기증상</MobileNavLink>
-                    <MobileNavLink href="/clinic/women/cystitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성방광염/질염</MobileNavLink>
-                    <MobileNavLink href="/clinic/women/pregnancy" onClick={() => setIsMobileMenuOpen(false)} isSubItem>임신준비</MobileNavLink>
-                    <MobileNavLink href="/clinic/women/postpartum" onClick={() => setIsMobileMenuOpen(false)} isSubItem>산후조리</MobileNavLink>
-                    <MobileNavLink href="/clinic/women/sanhuphung" onClick={() => setIsMobileMenuOpen(false)} isSubItem>산후풍</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/pain" onClick={() => setIsMobileMenuOpen(false)}>통증/신경질환</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/pain/headache" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성두통</MobileNavLink>
-                    <MobileNavLink href="/clinic/pain/tinnitus" onClick={() => setIsMobileMenuOpen(false)} isSubItem>이명</MobileNavLink>
-                    <MobileNavLink href="/clinic/pain/dizziness" onClick={() => setIsMobileMenuOpen(false)} isSubItem>어지러움</MobileNavLink>
-                    <MobileNavLink href="/clinic/pain/tos" onClick={() => setIsMobileMenuOpen(false)} isSubItem>흉곽출구증후군</MobileNavLink>
-                    <MobileNavLink href="/clinic/pain/tennis-elbow" onClick={() => setIsMobileMenuOpen(false)} isSubItem>테니스엘보</MobileNavLink>
-                    <MobileNavLink href="/clinic/pain/si-joint" onClick={() => setIsMobileMenuOpen(false)} isSubItem>천장관절통</MobileNavLink>
-                    <MobileNavLink href="/clinic/pain/knee" onClick={() => setIsMobileMenuOpen(false)} isSubItem>슬관절통</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/growth" onClick={() => setIsMobileMenuOpen(false)}>소아/수험생</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/growth/height" onClick={() => setIsMobileMenuOpen(false)} isSubItem>키성장한약</MobileNavLink>
-                    <MobileNavLink href="/clinic/growth/mind" onClick={() => setIsMobileMenuOpen(false)} isSubItem>마음튼튼한약</MobileNavLink>
-                    <MobileNavLink href="/clinic/growth/student" onClick={() => setIsMobileMenuOpen(false)} isSubItem>수험생 총명탕</MobileNavLink>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <MobileNavLink href="/clinic/gongjindan" onClick={() => setIsMobileMenuOpen(false)}>공진단</MobileNavLink>
-                  <div className="pl-4 flex flex-col gap-2 mt-1 mb-2 ml-2">
-                    <MobileNavLink href="/clinic/gongjindan/original" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원방공진단</MobileNavLink>
-                    <MobileNavLink href="/clinic/gongjindan/deer-antler" onClick={() => setIsMobileMenuOpen(false)} isSubItem>녹용공진단</MobileNavLink>
-                    <MobileNavLink href="/clinic/gongjindan/cheongsimhwan" onClick={() => setIsMobileMenuOpen(false)} isSubItem>청심환</MobileNavLink>
-                  </div>
-                </div>
-                <MobileNavLink
-                  href="https://map.naver.com/p/entry/place/13240803?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511271924&locale=ko&svcName=map_pcv5"
-                  onClick={() => {
-                    alert("해당질환의 진료는 예약진료로 진행하고있습니다.");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  target="_blank"
-                >
-                  문의하기
-                </MobileNavLink>
+              <nav className="flex flex-col">
+                <MobileMenuAccordion title="동제당한의원" href="/about" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원장소개</MobileNavLink>
+                  <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는 길</MobileNavLink>
+                  <MobileNavLink href="/about/space" onClick={() => setIsMobileMenuOpen(false)} isSubItem>쉼의 시작, 회복의 공간</MobileNavLink>
+                  <MobileNavLink href="/about/medicine" onClick={() => setIsMobileMenuOpen(false)} isSubItem>동제당 청정한약</MobileNavLink>
+                </MobileMenuAccordion>
 
-                <div className="mt-4 pt-4">
-                  <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는길</MobileNavLink>
+                <MobileMenuAccordion title="해독/비만" href="/clinic/detox" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/detox" onClick={() => setIsMobileMenuOpen(false)} isSubItem>소개</MobileNavLink>
+                  <MobileNavLink href="/clinic/detox/fasting" onClick={() => setIsMobileMenuOpen(false)} isSubItem>절식해독프로그램</MobileNavLink>
+                  <MobileNavLink href="/clinic/detox/constitution" onClick={() => setIsMobileMenuOpen(false)} isSubItem>체질식해독프로그램</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="피부질환" href="/clinic/skin" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/skin/dyshidrosis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>한포진</MobileNavLink>
+                  <MobileNavLink href="/clinic/skin/atopy" onClick={() => setIsMobileMenuOpen(false)} isSubItem>아토피피부염</MobileNavLink>
+                  <MobileNavLink href="/clinic/skin/eczema" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성습진</MobileNavLink>
+                  <MobileNavLink href="/clinic/skin/seborrheic" onClick={() => setIsMobileMenuOpen(false)} isSubItem>지루성피부염</MobileNavLink>
+                  <MobileNavLink href="/clinic/skin/psoriasis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>건선</MobileNavLink>
+                  <MobileNavLink href="/clinic/skin/urticaria" onClick={() => setIsMobileMenuOpen(false)} isSubItem>두드러기</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="이비인후과질환" href="/clinic/ent" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/ent/rhinitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>비염</MobileNavLink>
+                  <MobileNavLink href="/clinic/ent/sinusitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>축농증</MobileNavLink>
+                  <MobileNavLink href="/clinic/ent/otolithiasis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성이석증</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="소화기질환" href="/clinic/digestive" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/digestive/reflux" onClick={() => setIsMobileMenuOpen(false)} isSubItem>역류성식도염</MobileNavLink>
+                  <MobileNavLink href="/clinic/digestive/gastritis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성위염</MobileNavLink>
+                  <MobileNavLink href="/clinic/digestive/ibs" onClick={() => setIsMobileMenuOpen(false)} isSubItem>과민성대장증후군</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="신경정신질환" href="/clinic/neuro" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/neuro/insomnia" onClick={() => setIsMobileMenuOpen(false)} isSubItem>불면증</MobileNavLink>
+                  <MobileNavLink href="/clinic/neuro/anxiety" onClick={() => setIsMobileMenuOpen(false)} isSubItem>불안장애</MobileNavLink>
+                  <MobileNavLink href="/clinic/neuro/panic" onClick={() => setIsMobileMenuOpen(false)} isSubItem>공황장애</MobileNavLink>
+                  <MobileNavLink href="/clinic/neuro/depression" onClick={() => setIsMobileMenuOpen(false)} isSubItem>우울증</MobileNavLink>
+                  <MobileNavLink href="/clinic/neuro/adhd" onClick={() => setIsMobileMenuOpen(false)} isSubItem>ADHD</MobileNavLink>
+                  <MobileNavLink href="/clinic/neuro/ocd" onClick={() => setIsMobileMenuOpen(false)} isSubItem>강박증</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="여성질환" href="/clinic/women" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/women/pcos" onClick={() => setIsMobileMenuOpen(false)} isSubItem>다낭성난소증후군</MobileNavLink>
+                  <MobileNavLink href="/clinic/women/menopause" onClick={() => setIsMobileMenuOpen(false)} isSubItem>갱년기증상</MobileNavLink>
+                  <MobileNavLink href="/clinic/women/cystitis" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성방광염/질염</MobileNavLink>
+                  <MobileNavLink href="/clinic/women/pregnancy" onClick={() => setIsMobileMenuOpen(false)} isSubItem>임신준비</MobileNavLink>
+                  <MobileNavLink href="/clinic/women/postpartum" onClick={() => setIsMobileMenuOpen(false)} isSubItem>산후조리</MobileNavLink>
+                  <MobileNavLink href="/clinic/women/sanhuphung" onClick={() => setIsMobileMenuOpen(false)} isSubItem>산후풍</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="통증/신경질환" href="/clinic/pain" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/pain/headache" onClick={() => setIsMobileMenuOpen(false)} isSubItem>만성두통</MobileNavLink>
+                  <MobileNavLink href="/clinic/pain/tinnitus" onClick={() => setIsMobileMenuOpen(false)} isSubItem>이명</MobileNavLink>
+                  <MobileNavLink href="/clinic/pain/dizziness" onClick={() => setIsMobileMenuOpen(false)} isSubItem>어지러움</MobileNavLink>
+                  <MobileNavLink href="/clinic/pain/tos" onClick={() => setIsMobileMenuOpen(false)} isSubItem>흉곽출구증후군</MobileNavLink>
+                  <MobileNavLink href="/clinic/pain/tennis-elbow" onClick={() => setIsMobileMenuOpen(false)} isSubItem>테니스엘보</MobileNavLink>
+                  <MobileNavLink href="/clinic/pain/si-joint" onClick={() => setIsMobileMenuOpen(false)} isSubItem>천장관절통</MobileNavLink>
+                  <MobileNavLink href="/clinic/pain/knee" onClick={() => setIsMobileMenuOpen(false)} isSubItem>슬관절통</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="소아/수험생" href="/clinic/growth" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/growth/height" onClick={() => setIsMobileMenuOpen(false)} isSubItem>키성장한약</MobileNavLink>
+                  <MobileNavLink href="/clinic/growth/mind" onClick={() => setIsMobileMenuOpen(false)} isSubItem>마음튼튼한약</MobileNavLink>
+                  <MobileNavLink href="/clinic/growth/student" onClick={() => setIsMobileMenuOpen(false)} isSubItem>수험생 총명탕</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <MobileMenuAccordion title="공진단" href="/clinic/gongjindan" onItemClick={() => setIsMobileMenuOpen(false)}>
+                  <MobileNavLink href="/clinic/gongjindan/original" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원방공진단</MobileNavLink>
+                  <MobileNavLink href="/clinic/gongjindan/deer-antler" onClick={() => setIsMobileMenuOpen(false)} isSubItem>녹용공진단</MobileNavLink>
+                  <MobileNavLink href="/clinic/gongjindan/cheongsimhwan" onClick={() => setIsMobileMenuOpen(false)} isSubItem>청심환</MobileNavLink>
+                </MobileMenuAccordion>
+
+                <div className="py-2">
+                  <MobileNavLink
+                    href="https://map.naver.com/p/entry/place/13240803?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511271924&locale=ko&svcName=map_pcv5"
+                    onClick={() => {
+                      alert("해당질환의 진료는 예약진료로 진행하고있습니다.");
+                      setIsMobileMenuOpen(false);
+                    }}
+                    target="_blank"
+                  >
+                    문의하기
+                  </MobileNavLink>
                 </div>
               </nav>
             </div>
-          </div>
-        </div>
+          </d iv>
+        </d iv>
       )}
     </>
   );
@@ -528,6 +506,41 @@ function NoticeBar() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
+      </div>
+    </div>
+  );
+}
+
+function MobileMenuAccordion({ title, href, children, onItemClick }: { title: string, href: string, children: React.ReactNode, onItemClick: () => void }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center justify-between">
+        <Link
+          href={href}
+          onClick={onItemClick}
+          className="text-[15px] text-text/80 font-serif font-medium hover:text-primary py-3 block flex-1"
+        >
+          {title}
+        </Link>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }}
+          className="p-3 text-text/50 hover:text-primary"
+        >
+          <svg className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100 mb-4' : 'max-h-0 opacity-0'}`}>
+        <div className="pl-4 flex flex-col gap-2 border-l-2 border-primary/20 ml-2">
+          {children}
+        </div>
       </div>
     </div>
   );

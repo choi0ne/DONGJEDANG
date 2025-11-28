@@ -41,6 +41,8 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
 };
 
+import ChatBot from "./components/ChatBot";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +52,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${notoSansKr.className} ${nanumMyeongjo.variable} antialiased bg-[#F8F7F0]`}>
         {children}
+        <ChatBot />
       </body>
     </html>
   );
