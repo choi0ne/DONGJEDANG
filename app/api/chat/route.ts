@@ -21,10 +21,7 @@ const SYSTEM_PROMPT = `
 
 export async function POST(req: Request) {
     try {
-        // const apiKey = process.env.GEMINI_API_KEY;
-        const apiKey = "AIzaSyBXODOY7w9WXSwtmcC5eA_jmQW7QL-FDBs";
-        console.log("Debug - API Key used:", apiKey);
-        console.log("Debug - Env Var:", process.env.GEMINI_API_KEY);
+        const apiKey = process.env.GEMINI_API_KEY;
 
         if (!apiKey) {
             return NextResponse.json(
