@@ -83,7 +83,7 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-            </d iv>
+            </div>
 
             <div className="flex-1 overflow-y-auto py-6 px-6">
               {/* Search Bar */}
@@ -189,8 +189,8 @@ export default function Header() {
                 </div>
               </nav>
             </div>
-          </d iv>
-        </d iv>
+          </div>
+        </div>
       )}
     </>
   );
