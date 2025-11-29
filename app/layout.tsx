@@ -48,9 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+
       <body className={`${notoSansKr.className} ${nanumMyeongjo.variable} antialiased bg-[#F8F7F0]`}>
         {children}
       </body>
-    </html>
+    </html >
   );
 }

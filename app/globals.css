@@ -29,12 +29,13 @@
 
   --font-sans: "Pretendard", sans-serif;
   --font-serif: "KoPub Batang", serif;
+  --font-nanum: var(--font-nanum-myeongjo), serif;
 }
 
 body {
   background-color: var(--background);
   color: var(--text);
-  font-family: var(--font-sans);
+  font-family: var(--font-nanum);
   word-break: keep-all;
 }
 
