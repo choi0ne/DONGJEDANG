@@ -19,8 +19,8 @@ export default function Header() {
 
   return (
     <>
-      <NoticeBar />
-      <header className="bg-[#F8F7F0] sticky top-0 z-[100]">
+
+      <header className="bg-background sticky top-0 z-[100]">
         <div className="max-w-[1200px] mx-auto px-6">
 
           {/* Desktop Layout */}
@@ -67,7 +67,7 @@ export default function Header() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
 
           {/* Drawer */}
-          <div className="absolute top-0 left-0 w-[80%] max-w-[300px] h-full bg-[#F8F7F0] shadow-2xl flex flex-col animate-slideInLeft">
+          <div className="absolute top-0 left-0 w-[80%] max-w-[300px] h-full bg-background shadow-2xl flex flex-col animate-slideInLeft">
             <div className="p-6 flex justify-between items-center">
               <img
                 src="/신로고_가로1.jpg"
@@ -104,6 +104,7 @@ export default function Header() {
                 <MobileMenuAccordion title="동제당한의원" href="/about" onItemClick={() => setIsMobileMenuOpen(false)}>
                   <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원장소개</MobileNavLink>
                   <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는 길</MobileNavLink>
+
                   <MobileNavLink href="/about/space" onClick={() => setIsMobileMenuOpen(false)} isSubItem>쉼의 시작, 회복의 공간</MobileNavLink>
                   <MobileNavLink href="/about/medicine" onClick={() => setIsMobileMenuOpen(false)} isSubItem>동제당 청정한약</MobileNavLink>
                 </MobileMenuAccordion>
@@ -177,9 +178,8 @@ export default function Header() {
 
                 <div className="py-2">
                   <MobileNavLink
-                    href="https://map.naver.com/p/entry/place/13240803?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511271924&locale=ko&svcName=map_pcv5"
+                    href="https://m.place.naver.com/hospital/13240803/home"
                     onClick={() => {
-                      alert("해당질환의 진료는 예약진료로 진행하고있습니다.");
                       setIsMobileMenuOpen(false);
                     }}
                     target="_blank"
@@ -208,7 +208,7 @@ function NavLinks() {
     { href: "/clinic/pain", label: "통증/신경질환" },
     { href: "/clinic/growth", label: "소아/수험생" },
     { href: "/clinic/gongjindan", label: "공진단" },
-    { href: "https://map.naver.com/p/entry/place/13240803?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511271924&locale=ko&svcName=map_pcv5", label: "문의하기" },
+    { href: "https://m.place.naver.com/hospital/13240803/home", label: "문의하기" },
   ];
 
   return (
@@ -219,18 +219,19 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
               </Link>
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/about" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">원장소개</Link>
-                  <Link href="/location" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">오시는 길</Link>
-                  <Link href="/about/space" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">쉼의 시작, 회복의 공간</Link>
-                  <Link href="/about/medicine" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">동제당 청정한약</Link>
+                <div className="bg-background shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
+                  <Link href="/about" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">원장소개</Link>
+                  <Link href="/location" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">오시는 길</Link>
+
+                  <Link href="/about/space" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">쉼의 시작, 회복의 공간</Link>
+                  <Link href="/about/medicine" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">동제당 청정한약</Link>
                 </div>
               </div>
             </div>
@@ -241,7 +242,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -249,9 +250,9 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/detox" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">소개</Link>
-                  <Link href="/clinic/detox/fasting" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">절식해독프로그램</Link>
-                  <Link href="/clinic/detox/constitution" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">체질식해독프로그램</Link>
+                  <Link href="/clinic/detox" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">소개</Link>
+                  <Link href="/clinic/detox/fasting" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">절식해독프로그램</Link>
+                  <Link href="/clinic/detox/constitution" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">체질식해독프로그램</Link>
                 </div>
               </div>
             </div>
@@ -262,7 +263,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -270,9 +271,9 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/ent/rhinitis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">비염</Link>
-                  <Link href="/clinic/ent/sinusitis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">축농증</Link>
-                  <Link href="/clinic/ent/otolithiasis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성이석증</Link>
+                  <Link href="/clinic/ent/rhinitis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">비염</Link>
+                  <Link href="/clinic/ent/sinusitis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">축농증</Link>
+                  <Link href="/clinic/ent/otolithiasis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성이석증</Link>
                 </div>
               </div>
             </div>
@@ -283,7 +284,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -291,9 +292,9 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/digestive/reflux" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">역류성식도염</Link>
-                  <Link href="/clinic/digestive/gastritis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성위염</Link>
-                  <Link href="/clinic/digestive/ibs" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">과민성대장증후군</Link>
+                  <Link href="/clinic/digestive/reflux" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">역류성식도염</Link>
+                  <Link href="/clinic/digestive/gastritis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성위염</Link>
+                  <Link href="/clinic/digestive/ibs" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">과민성대장증후군</Link>
                 </div>
               </div>
             </div>
@@ -304,7 +305,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -312,12 +313,12 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/neuro/insomnia" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">불면증</Link>
-                  <Link href="/clinic/neuro/anxiety" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">불안장애</Link>
-                  <Link href="/clinic/neuro/panic" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">공황장애</Link>
-                  <Link href="/clinic/neuro/depression" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">우울증</Link>
-                  <Link href="/clinic/neuro/adhd" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">ADHD</Link>
-                  <Link href="/clinic/neuro/ocd" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">강박증</Link>
+                  <Link href="/clinic/neuro/insomnia" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">불면증</Link>
+                  <Link href="/clinic/neuro/anxiety" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">불안장애</Link>
+                  <Link href="/clinic/neuro/panic" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">공황장애</Link>
+                  <Link href="/clinic/neuro/depression" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">우울증</Link>
+                  <Link href="/clinic/neuro/adhd" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">ADHD</Link>
+                  <Link href="/clinic/neuro/ocd" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">강박증</Link>
                 </div>
               </div>
             </div>
@@ -328,7 +329,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -336,12 +337,12 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/women/pcos" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">다낭성난소증후군</Link>
-                  <Link href="/clinic/women/menopause" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">갱년기증상</Link>
-                  <Link href="/clinic/women/cystitis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성방광염/질염</Link>
-                  <Link href="/clinic/women/pregnancy" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">임신준비</Link>
-                  <Link href="/clinic/women/postpartum" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후조리</Link>
-                  <Link href="/clinic/women/sanhuphung" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후풍</Link>
+                  <Link href="/clinic/women/pcos" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">다낭성난소증후군</Link>
+                  <Link href="/clinic/women/menopause" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">갱년기증상</Link>
+                  <Link href="/clinic/women/cystitis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성방광염/질염</Link>
+                  <Link href="/clinic/women/pregnancy" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">임신준비</Link>
+                  <Link href="/clinic/women/postpartum" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후조리</Link>
+                  <Link href="/clinic/women/sanhuphung" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">산후풍</Link>
                 </div>
               </div>
             </div>
@@ -352,7 +353,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -360,13 +361,13 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/pain/headache" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성두통</Link>
-                  <Link href="/clinic/pain/tinnitus" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">이명</Link>
-                  <Link href="/clinic/pain/dizziness" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">어지러움</Link>
-                  <Link href="/clinic/pain/tos" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">흉곽출구증후군</Link>
-                  <Link href="/clinic/pain/tennis-elbow" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">테니스엘보</Link>
-                  <Link href="/clinic/pain/si-joint" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">천장관절통</Link>
-                  <Link href="/clinic/pain/knee" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">슬관절통</Link>
+                  <Link href="/clinic/pain/headache" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성두통</Link>
+                  <Link href="/clinic/pain/tinnitus" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">이명</Link>
+                  <Link href="/clinic/pain/dizziness" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">어지러움</Link>
+                  <Link href="/clinic/pain/tos" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">흉곽출구증후군</Link>
+                  <Link href="/clinic/pain/tennis-elbow" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">테니스엘보</Link>
+                  <Link href="/clinic/pain/si-joint" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">천장관절통</Link>
+                  <Link href="/clinic/pain/knee" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">슬관절통</Link>
                 </div>
               </div>
             </div>
@@ -377,7 +378,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -385,9 +386,9 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/growth/height" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">키성장한약</Link>
-                  <Link href="/clinic/growth/mind" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">마음튼튼한약</Link>
-                  <Link href="/clinic/growth/student" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">수험생 총명탕</Link>
+                  <Link href="/clinic/growth/height" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">키성장한약</Link>
+                  <Link href="/clinic/growth/mind" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">마음튼튼한약</Link>
+                  <Link href="/clinic/growth/student" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">수험생 총명탕</Link>
                 </div>
               </div>
             </div>
@@ -398,7 +399,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -406,9 +407,9 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/gongjindan/original" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">원방공진단</Link>
-                  <Link href="/clinic/gongjindan/deer-antler" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">녹용공진단</Link>
-                  <Link href="/clinic/gongjindan/cheongsimhwan" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">청심환</Link>
+                  <Link href="/clinic/gongjindan/original" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">원방공진단</Link>
+                  <Link href="/clinic/gongjindan/deer-antler" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">녹용공진단</Link>
+                  <Link href="/clinic/gongjindan/cheongsimhwan" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">청심환</Link>
                 </div>
               </div>
             </div>
@@ -419,7 +420,7 @@ function NavLinks() {
             <div key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
+                className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative py-2 whitespace-nowrap block"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -427,12 +428,12 @@ function NavLinks() {
               {/* Dropdown Menu */}
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="bg-[#F8F7F0] shadow-lg rounded-lg overflow-hidden flex flex-col py-2">
-                  <Link href="/clinic/skin/dyshidrosis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">한포진</Link>
-                  <Link href="/clinic/skin/atopy" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">아토피피부염</Link>
-                  <Link href="/clinic/skin/eczema" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성습진</Link>
-                  <Link href="/clinic/skin/seborrheic" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">지루성피부염</Link>
-                  <Link href="/clinic/skin/psoriasis" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">건선</Link>
-                  <Link href="/clinic/skin/urticaria" className="px-4 py-2 font-serif text-[15px] font-medium text-text/80 hover:bg-secondary/5 hover:text-primary transition-colors text-center">두드러기</Link>
+                  <Link href="/clinic/skin/dyshidrosis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">한포진</Link>
+                  <Link href="/clinic/skin/atopy" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">아토피피부염</Link>
+                  <Link href="/clinic/skin/eczema" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">만성습진</Link>
+                  <Link href="/clinic/skin/seborrheic" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">지루성피부염</Link>
+                  <Link href="/clinic/skin/psoriasis" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">건선</Link>
+                  <Link href="/clinic/skin/urticaria" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">두드러기</Link>
                 </div>
               </div>
             </div>
@@ -443,11 +444,11 @@ function NavLinks() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative group py-2 whitespace-nowrap"
+              className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative group py-2 whitespace-nowrap"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                alert("해당질환의 진료는 예약진료로 진행하고있습니다.");
+                // No alert needed
               }}
             >
               {link.label}
@@ -459,7 +460,7 @@ function NavLinks() {
           <Link
             key={link.href}
             href={link.href}
-            className="text-text/80 font-serif text-[15px] font-medium hover:text-primary hover:font-bold transition-all duration-300 relative group py-2 whitespace-nowrap"
+            className="text-[rgb(0,1,69)] font-nanum text-[15px] leading-[15px] font-normal hover:text-primary hover:font-bold transition-all duration-300 relative group py-2 whitespace-nowrap"
             target={link.href.startsWith('http') ? "_blank" : undefined}
             rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
           >
@@ -477,7 +478,7 @@ function MobileNavLink({ href, onClick, children, isSubItem = false, target }: {
     <Link
       href={href}
       onClick={onClick}
-      className={`text-[15px] text-text/80 font-serif font-medium hover:text-primary hover:pl-2 transition-all duration-300 block ${!isSubItem && 'pb-2'}`}
+      className={`text-[15px] leading-[15px] text-[rgb(0,1,69)] font-nanum font-normal hover:text-primary hover:pl-2 transition-all duration-300 block ${!isSubItem && 'pb-2'}`}
       target={target}
       rel={target === '_blank' ? "noopener noreferrer" : undefined}
     >
@@ -486,30 +487,7 @@ function MobileNavLink({ href, onClick, children, isSubItem = false, target }: {
   );
 }
 
-function NoticeBar() {
-  const [isVisible, setIsVisible] = useState(true);
 
-  if (!isVisible) return null;
-
-  return (
-    <div className="bg-black text-white py-5 px-4 text-xl font-medium relative z-[110]">
-      <div className="max-w-[1200px] mx-auto flex justify-between items-center gap-4">
-        <div className="flex-1 text-center">
-          <span>[공지] 진료 시간 변경 안내: 매주 수요일은 오후 2시부터 진료합니다. 내원에 착오 없으시길 바랍니다.</span>
-        </div>
-        <button
-          onClick={() => setIsVisible(false)}
-          className="text-white/70 hover:text-white transition-colors p-1"
-          aria-label="공지 닫기"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  );
-}
 
 function MobileMenuAccordion({ title, href, children, onItemClick }: { title: string, href: string, children: React.ReactNode, onItemClick: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -520,7 +498,7 @@ function MobileMenuAccordion({ title, href, children, onItemClick }: { title: st
         <Link
           href={href}
           onClick={onItemClick}
-          className="text-[15px] text-text/80 font-serif font-medium hover:text-primary py-3 block flex-1"
+          className="text-[15px] leading-[15px] text-[rgb(0,1,69)] font-nanum font-normal hover:text-primary py-3 block flex-1"
         >
           {title}
         </Link>

@@ -12,7 +12,7 @@ export default function SubPageHeader({ title, subtitle, englishTitle, imageSrc 
 
     return (
         <section
-            className={`relative w-full h-[430px] flex items-center justify-center overflow-hidden ${!imageSrc ? 'bg-[#FDFBF7]' : ''}`}
+            className={`relative w-full h-[430px] flex items-center justify-center overflow-hidden ${!imageSrc ? 'bg-background' : ''}`}
             style={imageSrc ? {
                 backgroundImage: `url(${imageSrc})`,
                 backgroundSize: 'cover',
@@ -33,11 +33,11 @@ export default function SubPageHeader({ title, subtitle, englishTitle, imageSrc 
                         </span>
                     )}
                     {title && (
-                        <h1 className={`text-4xl md:text-5xl font-bold mb-6 font-serif animate-fadeInUp ${imageSrc ? 'text-white' : 'text-text'}`}>
+                        <h1 className={`font-serif animate-fadeInUp ${imageSrc ? 'text-white text-4xl md:text-5xl font-bold' : 'text-[#333333] font-normal text-[25px] leading-[38px]'} mb-6`}>
                             {title}
                         </h1>
                     )}
-                    <div className={`w-16 h-1 mx-auto mb-6 animate-fadeInUp delay-100 ${imageSrc ? 'bg-white/50' : 'bg-primary/30'}`}></div>
+
                     {subtitle && (
                         <p className={`text-lg max-w-2xl mx-auto leading-relaxed font-serif animate-fadeInUp delay-200 ${imageSrc ? 'text-white/90' : 'text-text/70'}`}>
                             {subtitle}

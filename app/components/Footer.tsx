@@ -4,30 +4,30 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-[#9F9E99] text-[#F8F7F0] py-12 border-t border-secondary/10 font-sans text-sm">
+        <footer className="bg-[#9F9E99] text-[#F8F7F0] py-12 border-t border-secondary/10 font-[family-name:var(--font-noto-sans-kr)] font-normal text-[13px] leading-[26px]">
             <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8">
 
                 {/* Left Side: Info & Links */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
                     {/* Links */}
-                    <div className="flex gap-4 font-medium text-[#F8F7F0] items-center">
+                    <div className="flex gap-4 font-normal text-[#F8F7F0] items-center">
 
-                        <Link href="/terms" className="hover:text-primary transition-colors text-xs">이용약관</Link>
-                        <Link href="/privacy" className="hover:text-primary transition-colors text-xs">개인정보처리방침</Link>
+                        <Link href="/terms" className="hover:text-primary transition-colors">이용약관</Link>
+                        <Link href="/privacy" className="hover:text-primary transition-colors">개인정보처리방침</Link>
                     </div>
 
                     {/* Info */}
-                    <div className="space-y-1 leading-relaxed">
+                    <div className="space-y-1">
                         <p className="flex flex-wrap justify-center md:justify-start gap-x-3">
                             <span>상호: 동제당한의원</span>
-                            <span className="text-secondary/30">|</span>
+                            <span className="text-[#F8F7F0]/30">|</span>
                             <span>대표: 최장혁</span>
-                            <span className="text-secondary/30">|</span>
+                            <span className="text-[#F8F7F0]/30">|</span>
                             <span>전화: 032-765-7733</span>
                         </p>
                         <p className="flex flex-wrap justify-center md:justify-start gap-x-3">
                             <span>주소: 인천시 동구 동산로 88 2층</span>
-                            <span className="text-secondary/30">|</span>
+                            <span className="text-[#F8F7F0]/30">|</span>
                             <span>사업자등록번호: 121-91-29641</span>
                         </p>
                     </div>
@@ -47,7 +47,7 @@ export default function Footer() {
 
                     {/* Inquiry Button */}
                     <Link
-                        href="https://map.naver.com/p/entry/place/13240803?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511271924&locale=ko&svcName=map_pcv5"
+                        href="https://m.place.naver.com/hospital/13240803/home"
                         target="_blank"
                         className="flex items-center justify-center w-7 h-7 bg-gray-200 text-gray-500 rounded hover:bg-gray-300 transition-colors"
                         aria-label="문의하기"

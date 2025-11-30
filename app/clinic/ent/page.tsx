@@ -28,7 +28,7 @@ export default function ENTClinicPage() {
 
                     {/* Key Features Grid */}
                     <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 animate-fadeInUp delay-100">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
                             </div>
@@ -38,7 +38,7 @@ export default function ENTClinicPage() {
                                 외부 알레르기 물질이나 바이러스에 대한 저항력을 높입니다.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                             </div>
@@ -48,7 +48,7 @@ export default function ENTClinicPage() {
                                 빠른 증상 완화와 함께 기능을 회복시킵니다.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             </div>
@@ -58,7 +58,7 @@ export default function ENTClinicPage() {
                                 가장 효과적인 한약재를 선별하여 처방합니다.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
@@ -75,7 +75,7 @@ export default function ENTClinicPage() {
                         <h3 className="font-serif text-2xl font-bold text-center mb-10">주요 진료 과목</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                             {['알레르기 비염', '만성 비염', '축농증 (부비동염)', '이명', '난청', '어지럼증'].map((item, index) => (
-                                <div key={index} className="bg-white p-6 rounded-xl text-center border border-secondary/10 hover:border-primary/30 transition-colors">
+                                <div key={index} className="bg-background p-6 rounded-xl text-center border border-secondary/10 hover:border-primary/30 transition-colors">
                                     <span className="font-medium text-lg text-text/80">{item}</span>
                                 </div>
                             ))}

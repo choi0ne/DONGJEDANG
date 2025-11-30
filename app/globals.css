@@ -5,17 +5,17 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Brand Persona v2.0 Colors (Baekrokdam Style) */
-  --primary: #2F5233;
-  /* Deep Forest Green - Nature/Vitality */
-  --secondary: #94C973;
-  /* Fresh Green/Sage - Healing */
-  --accent: #D4A373;
-  /* Warm Wood/Earth - Stability */
+  /* Brand Persona v2.0 Colors (Strict Minimalist) */
+  --primary: #000000;
+  /* Pure Black - Main Text & Primary Elements */
+  --secondary: #9F9E99;
+  /* Warm Gray - Subtitles & Accents */
+  --accent: #9F9E99;
+  /* Warm Gray - Unified Accent */
   --background: #F8F7F0;
-  /* Premium Warm White */
-  --text: #222222;
-  /* Deep Charcoal - Readability */
+  /* Premium Warm White - Background */
+  --text: #000000;
+  /* Pure Black - Main Text */
   --white: #ffffff;
 }
 

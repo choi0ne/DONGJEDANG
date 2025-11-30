@@ -28,7 +28,7 @@ export default function SkinClinicPage() {
 
                     {/* Key Features Grid */}
                     <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 animate-fadeInUp delay-100">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                             </div>
@@ -38,7 +38,7 @@ export default function SkinClinicPage() {
                                 가장 적합한 한약과 외용제를 처방합니다.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
@@ -48,7 +48,7 @@ export default function SkinClinicPage() {
                                 외부 자극에도 쉽게 흔들리지 않는 건강한 피부를 만듭니다.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
@@ -58,7 +58,7 @@ export default function SkinClinicPage() {
                                 피부 트러블의 근본 원인을 제거합니다.
                             </p>
                         </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
+                        <div className="bg-background p-8 rounded-2xl shadow-sm border border-secondary/10 hover:shadow-md transition-shadow">
                             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
@@ -75,7 +75,7 @@ export default function SkinClinicPage() {
                         <h3 className="font-serif text-2xl font-bold text-center mb-10">주요 진료 과목</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                             {['아토피 피부염', '건선', '지루성 피부염', '한포진', '두드러기', '여드름'].map((item, index) => (
-                                <div key={index} className="bg-white p-6 rounded-xl text-center border border-secondary/10 hover:border-primary/30 transition-colors">
+                                <div key={index} className="bg-background p-6 rounded-xl text-center border border-secondary/10 hover:border-primary/30 transition-colors">
                                     <span className="font-medium text-lg text-text/80">{item}</span>
                                 </div>
                             ))}
