@@ -101,7 +101,7 @@ export default function Header() {
               </div>
 
               <nav className="flex flex-col">
-                <MobileMenuAccordion title="동제당한의원" href="/about" onItemClick={() => setIsMobileMenuOpen(false)}>
+                <MobileMenuAccordion title="동제당한의원" href="/" onItemClick={() => setIsMobileMenuOpen(false)}>
                   <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원장소개</MobileNavLink>
                   <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는 길</MobileNavLink>
 
@@ -198,7 +198,7 @@ export default function Header() {
 
 function NavLinks() {
   const links = [
-    { href: "/about", label: "동제당한의원" },
+    { href: "/", label: "동제당한의원" },
     { href: "/clinic/detox", label: "해독/비만" },
     { href: "/clinic/skin", label: "피부질환" },
     { href: "/clinic/ent", label: "이비인후과질환" },

@@ -1,165 +1,286 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { db } from './firebase';
-import { doc, onSnapshot } from 'firebase/firestore';
 import Link from 'next/link';
+import Image from 'next/image';
+
+const banners = [
+  { type: 'image', src: '/메인베너.jpg' },
+  { type: 'image', src: '/메인베너2.jpg' },
+  { type: 'video', src: '/메인베너3.mp4' }
+];
 
 export default function Home() {
-  const [detoxTitle, setDetoxTitle] = useState('해독요법');
-  const [detoxDesc, setDetoxDesc] = useState('몸 안의 독소를 배출하여 건강을 되찾으세요.');
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const docRef = doc(db, "detox_content", "main_detox_info");
-    const unsubscribe = onSnapshot(docRef, (doc) => {
-      if (doc.exists()) {
-        const data = doc.data();
-        if (data.title) setDetoxTitle(data.title);
-        if (data.description) setDetoxDesc(data.description);
-      }
-    });
-    return () => unsubscribe();
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % banners.length);
+    }, 15000); // Change slide every 15 seconds
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-text bg-background">
+    <div className="min-h-screen flex flex-col font-sans text-[#222] bg-[#F8F7F0]">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/korean-pattern.png")' }}>
+      <section className="relative w-full h-[50vh] md:h-[85vh] flex items-center justify-center overflow-hidden bg-[#EAE9E4]">
+        {/* Main Banner Slider */}
+        {banners.map((banner, index) => (
+          <div
+            key={banner.src}
+            className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+          >
+            {banner.type === 'video' ? (
+              <video
+                src={banner.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="object-cover w-full h-full transform scale-105"
+              />
+            ) : (
+              <Image
+                src={banner.src}
+                alt={`동제당한의원 메인 배너 ${index + 1}`}
+                fill
+                className="object-cover transform scale-105"
+                priority={index === 0}
+              />
+            )}
+          </div>
+        ))}
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/10 z-10"></div>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-4">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full border-2 border-gray-800 transition-all duration-300 ${index === currentSlide ? 'bg-gray-800' : 'bg-transparent hover:bg-gray-800/20'
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
+      </section>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full flex flex-col items-center text-center">
-          <span className="inline-block text-primary font-medium tracking-[0.2em] uppercase mb-6 animate-fadeIn">
-            Natural Healing Center
-          </span>
-
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold text-text mb-8 leading-tight animate-fadeInUp">
-            쉼의 시간,<br />
-            <span className="text-primary">회복의 공간</span>
+      {/* Main Content Section */}
+      <section className="py-20 md:py-32 px-6">
+        <div className="max-w-[800px] mx-auto text-center">
+          <h1
+            className="text-4xl md:text-5xl font-bold text-[#000145] mb-6 leading-tight"
+            style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}
+          >
+            멈춤의 시작, 또다른 시작
           </h1>
 
-          <p className="font-serif text-lg md:text-xl text-text/70 mb-12 max-w-2xl leading-relaxed animate-fadeInUp delay-100">
-            자연을 닮은 치료로 몸과 마음의 균형을 찾아드립니다.<br />
-            동제당한의원이 당신의 건강한 일상을 응원합니다.
-          </p>
 
-          {/* Image Carousel */}
-          <div className="w-full max-w-5xl mx-auto mt-8 mb-12 overflow-hidden rounded-xl shadow-2xl animate-fadeInUp delay-200">
-            <div className="relative w-full aspect-[16/9] md:aspect-[21/9] group">
-              {/* Carousel Container */}
-              <div className="flex h-full animate-scroll hover:pause">
-                {/* Image Set 1 */}
-                <div className="flex-shrink-0 w-full h-full relative">
-                  <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80" alt="한약재" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-                <div className="flex-shrink-0 w-full h-full relative">
-                  <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80" alt="약탕기" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-                <div className="flex-shrink-0 w-full h-full relative">
-                  <img src="https://images.unsplash.com/photo-1626202378376-e865f3336c7c?auto=format&fit=crop&q=80" alt="침구실" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-                <div className="flex-shrink-0 w-full h-full relative">
-                  <img src="https://images.unsplash.com/photo-1606422869502-f6739f509348?auto=format&fit=crop&q=80" alt="진맥" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-                {/* Duplicate for infinite scroll effect */}
-                <div className="flex-shrink-0 w-full h-full relative">
-                  <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80" alt="한약재" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-              </div>
+          <h2
+            className="text-2xl md:text-3xl font-bold text-[#000145] mb-12"
+            style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}
+          >
+            안녕하세요. 동제당한의원입니다.
+          </h2>
 
-              {/* Overlay Text (Optional) */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="text-white/80 font-serif text-lg tracking-widest uppercase border border-white/30 px-6 py-2 bg-black/10 backdrop-blur-sm">Premium Korean Medicine</span>
-              </div>
+          <div className="space-y-8 text-lg text-gray-700 leading-loose font-light word-keep-all" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+            <p>
+              동제당한의원은 18여년간 다양한 난치성 질환을 치료하고 있습니다.<br />
+              다양한 질환들을 증상과 체질에 맞춰 1:1 맞춤 치료 프로그램을 체계적으로 진행하고 있습니다.
+            </p>
+            <p>
+              내원하시면 문진, 망진, 맥진, 복진 등을 진행하며<br />
+              정확한 몸 상태를 체크한 후에 적절한 치료 계획을 세우게 됩니다.
+            </p>
+            <p>
+              치료 기간은 환자의 몸 상태에 따라 달라질 수 있습니다.<br />
+              다양한 치험례와 노하우를 지속적으로 연구 발전해나가고 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3-Column Feature Section */}
+      <section className="py-16 px-6 bg-[#F8F7F0] text-[#222]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-center">
+
+          {/* Column 1 */}
+          <div className="flex flex-col items-center justify-center h-full">
+            <h3 className="text-2xl font-bold mb-8 text-[#000145]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+              동제당 한의원과 함께
+            </h3>
+            <div className="space-y-6 leading-loose font-light text-lg text-gray-700" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+              <p>
+                동제당한의원에서<br />
+                건강한 변화의 시작을 알립니다.
+              </p>
+              <p>
+                가족을 품는 정성 가득한 한약으로<br />
+                마음을 따뜻하게 감싸드리며,<br />
+                새로운 시작을 위해<br />
+                함께 걸어가는<br />
+                건강 이야기를 나눠요.
+              </p>
+            </div>
+          </div>
+
+          {/* Column 2 */}
+          <div className="flex flex-col h-full">
+            {/* Top */}
+            <div className="flex-1 flex flex-col items-center justify-start pb-8 border-b border-gray-200">
+              <h3 className="text-xl font-bold mb-6 mt-4 text-[#000145]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                따뜻한 한방치료
+              </h3>
+              <p className="leading-loose font-light text-lg text-gray-700" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                한방치료의 따뜻한 포옹으로<br />
+                오래된 질환에 대한 걱정과 의구심을<br />
+                녹여드리는<br />
+                원칙을 준수한 치료법
+              </p>
+            </div>
+            {/* Bottom */}
+            <div className="flex-1 flex flex-col items-center justify-end pt-8">
+              <h3 className="text-xl font-bold mb-6 text-[#000145]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                마음을 함께 나누는 친절한 상담
+              </h3>
+              <p className="leading-loose font-light text-lg text-gray-700" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                마음을 열고<br />
+                친절하게 상담하며,<br />
+                가슴에 담긴 이야기를<br />
+                함께 듣습니다
+              </p>
+            </div>
+          </div>
+
+          {/* Column 3 */}
+          <div className="flex flex-col h-full">
+            {/* Top */}
+            <div className="flex-1 flex flex-col items-center justify-start pb-8 border-b border-gray-200">
+              <h3 className="text-xl font-bold mb-6 mt-4 text-[#000145]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                정확한 진단과 처방
+              </h3>
+              <p className="leading-loose font-light text-lg text-gray-700" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                정확한 진단과<br />
+                알맞은 처방으로<br />
+                건강한 변화를<br />
+                이끌어드립니다
+              </p>
+            </div>
+            {/* Bottom */}
+            <div className="flex-1 flex flex-col items-center justify-end pt-8">
+              <h3 className="text-xl font-bold mb-6 text-[#000145]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                건강한 일상을 지키는 사후 관리
+              </h3>
+              <p className="leading-loose font-light text-lg text-gray-700" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                정기적인 문진과<br />
+                꼼꼼한 사후 관리로<br />
+                건강한 일상을<br />
+                함께 유지해요
+              </p>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* Clinic Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-widest uppercase mb-2 block">Clinic</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text">진료 안내</h2>
-            <div className="w-12 h-1 bg-secondary/30 mx-auto mt-6"></div>
-          </div>
+      <section className="py-20 px-6 bg-[#F8F7F0]">
+        <div className="max-w-[1200px] mx-auto">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group p-8 rounded-2xl bg-background hover:bg-primary hover:text-white transition-all duration-500 shadow-sm hover:shadow-xl border border-secondary/10">
-              <div className="w-14 h-14 bg-background rounded-full flex items-center justify-center mb-6 text-primary group-hover:text-primary shadow-sm">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          {/* 4-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 text-center">
+
+            {/* Column 1: Medical Hours */}
+            <div className="flex flex-col h-full border-t border-gray-300 pt-8">
+              <h3 className="text-[17px] font-bold mb-8 text-[#222]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                진료시간
+              </h3>
+              <div className="space-y-2 text-[15px] text-gray-600 font-light leading-relaxed mb-8" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                <p>평일 09:30~19:00</p>
+                <p>점심시간 13:00~14:00</p>
+                <p>토요일 09:30~14:00</p>
+                <p>일요일, 공휴일 휴진</p>
               </div>
-              <h3 className="font-serif text-xl font-bold mb-4">통증 클리닉</h3>
-              <p className="text-text/70 group-hover:text-white/90 leading-relaxed">
-                급만성 통증, 디스크, 관절염 등<br />
-                근본적인 원인을 찾아 치료합니다.
-              </p>
-            </div>
-
-            <div className="group p-8 rounded-2xl bg-background hover:bg-primary hover:text-white transition-all duration-500 shadow-sm hover:shadow-xl border border-secondary/10">
-              <div className="w-14 h-14 bg-background rounded-full flex items-center justify-center mb-6 text-primary group-hover:text-primary shadow-sm">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-              </div>
-              <h3 className="font-serif text-xl font-bold mb-4">해독 요법</h3>
-              <p className="text-text/70 group-hover:text-white/90 leading-relaxed">
-                체내 독소를 배출하고<br />
-                면역력을 증진시킵니다.
-              </p>
-            </div>
-
-            <div className="group p-8 rounded-2xl bg-background hover:bg-primary hover:text-white transition-all duration-500 shadow-sm hover:shadow-xl border border-secondary/10">
-              <div className="w-14 h-14 bg-background rounded-full flex items-center justify-center mb-6 text-primary group-hover:text-primary shadow-sm">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              </div>
-              <h3 className="font-serif text-xl font-bold mb-4">보약 클리닉</h3>
-              <p className="text-text/70 group-hover:text-white/90 leading-relaxed">
-                개인별 체질에 맞춘 처방으로<br />
-                기력을 회복시켜 드립니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dynamic Detox Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/korean-pattern.png")' }}></div>
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="w-full md:w-1/2">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group">
-                <img
-                  src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop"
-                  alt="Detox Therapy"
-                  className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="mt-auto space-y-4">
+                <p className="text-xs text-gray-500">진료는 사전예약제로 운영됩니다.</p>
+                <p className="text-xl font-bold text-[#000145]">032.765.7733</p>
               </div>
             </div>
-            <div className="w-full md:w-1/2 text-left">
-              <span className="text-primary font-bold tracking-widest uppercase mb-4 block">Special Care</span>
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-text mb-8 leading-tight">{detoxTitle}</h2>
-              <p className="text-lg text-text/70 mb-10 leading-relaxed">
-                {detoxDesc}
-              </p>
-              <Link href="/clinic/detox" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300 group">
-                자세히 보기
-                <span className="w-8 h-px bg-primary group-hover:w-12 transition-all duration-300"></span>
-              </Link>
+
+            {/* Column 2: Blog */}
+            <div className="flex flex-col h-full border-t border-gray-300 pt-8">
+              <h3 className="text-[17px] font-bold mb-8 text-[#222]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                블로그
+              </h3>
+              <div className="space-y-2 text-[15px] text-gray-600 font-light leading-relaxed mb-8" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                <p>동제당이 들려드리는</p>
+                <p>약재이야기, 건강이야기 등을</p>
+                <p>블로그에서 만나보세요.</p>
+              </div>
+              <div className="mt-auto">
+                <a
+                  href="https://blog.naver.com/dongjedang"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 border border-gray-400 text-gray-700 text-xs hover:bg-gray-100 transition-colors"
+                >
+                  블로그 바로가기
+                </a>
+              </div>
             </div>
+
+            {/* Column 3: Location */}
+            <div className="flex flex-col h-full border-t border-gray-300 pt-8">
+              <h3 className="text-[17px] font-bold mb-8 text-[#222]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                오시는 길
+              </h3>
+              <div className="space-y-2 text-[15px] text-gray-600 font-light leading-relaxed mb-8" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                <p>인천시 동구 동산로 88 2층</p>
+                <p>(송림동 59-1)</p>
+                <p>이마트 트레이더스 맞은편</p>
+                <p>송림 패션몰 옆</p>
+              </div>
+              <div className="mt-auto">
+                <Link
+                  href="/location"
+                  className="inline-block px-6 py-3 border border-gray-400 text-gray-700 text-xs hover:bg-gray-100 transition-colors"
+                >
+                  자세히 보기
+                </Link>
+              </div>
+            </div>
+
+            {/* Column 4: Reservation */}
+            <div className="flex flex-col h-full border-t border-gray-300 pt-8">
+              <h3 className="text-[17px] font-bold mb-8 text-[#222]" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                예약
+              </h3>
+              <div className="space-y-2 text-[15px] text-gray-600 font-light leading-relaxed mb-8" style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}>
+                <p>환자 한분한분을 보다 세밀하게 진료하기</p>
+                <p>위해 원칙상 예약제로 운영됩니다. 사전</p>
+                <p>예약 없이 방문시 대기시간이 다소 길어</p>
+                <p>질 수 있습니다.</p>
+              </div>
+              <div className="mt-auto">
+                <a
+                  href="https://m.place.naver.com/hospital/13240803/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 border border-gray-400 text-gray-700 text-xs hover:bg-gray-100 transition-colors"
+                >
+                  문의하기
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
