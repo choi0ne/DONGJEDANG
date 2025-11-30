@@ -1,6 +1,13 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @import url("https://fonts.googleapis.com/earlyaccess/kopubbatang.css");
 
+@font-face {
+  font-family: 'NanumMyeongjoYetHangul';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumMyeongjoYetHangul.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 

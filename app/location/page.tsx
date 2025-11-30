@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import SubPageHeader from '../components/SubPageHeader';
 import Image from 'next/image';
 import Link from 'next/link';
-import NaverMap from '../components/NaverMap';
+import GoogleMap from '../components/GoogleMap';
 
 export default function Location() {
     return (
@@ -15,9 +15,9 @@ export default function Location() {
 
             <main className="flex-1">
                 <div className="max-w-[1200px] mx-auto px-6 py-12 md:py-20">
-                    {/* Interactive Naver Map */}
+                    {/* Interactive Google Map */}
                     <div className="w-full mb-12">
-                        <NaverMap />
+                        <GoogleMap />
                     </div>
                     <div className="flex flex-col gap-10 max-w-2xl mx-auto text-center font-serif text-black">
                         <div className="space-y-4">

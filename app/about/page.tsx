@@ -21,8 +21,8 @@ export default function AboutPage() {
                             <div className="aspect-[3/4] relative rounded-lg overflow-hidden shadow-lg bg-[#EAE9E4]">
                                 {/* Placeholder for Director's Image - User to confirm specific file */}
                                 <Image
-                                    src="/프로필/Gemini_Generated_Image_eh3ohheh3ohheh3o.png"
-                                    alt="최장혁 원장님"
+                                    src="/프로필/Gemini_Generated_Image_sbp12nsbp12nsbp1.png"
+                                    alt="최장혁 원장"
                                     fill
                                     className="object-cover"
                                     priority
@@ -38,9 +38,12 @@ export default function AboutPage() {
                                 <span className="text-text/60">근본을 치료합니다"</span>
                             </h2>
 
-                            <div className="space-y-6 text-lg text-text/80 leading-relaxed font-light text-left md:text-center word-keep-all">
+                            <div
+                                className="space-y-6 text-lg text-text/80 leading-relaxed font-light text-left md:text-center word-keep-all"
+                                style={{ fontFamily: 'NanumMyeongjoYetHangul, serif' }}
+                            >
                                 <p>
-                                    안녕하세요, 동제당한의원 대표원장 <strong>최장혁</strong>입니다.
+                                    안녕하세요, 동제당한의원 원장 <strong>최장혁</strong>입니다.
                                 </p>
                                 <p>
                                     몸이 아프면 마음도 함께 힘들어집니다.<br />
@@ -60,34 +63,35 @@ export default function AboutPage() {
                     </div>
 
                     {/* Medical Hours & Reservation Guide */}
-                    <div className="border-t border-secondary/20 pt-10 mt-10 font-sans">
+                    {/* Medical Hours & Reservation Guide */}
+                    <div className="border-t border-secondary/20 pt-10 mt-10 font-serif font-normal text-black">
                         <div className="flex flex-col gap-6 max-w-xl mx-auto">
                             {/* Hours */}
                             <div>
-                                <h3 className="text-[13px] font-bold text-primary mb-3 flex items-center gap-2">
-                                    <span className="w-1 h-1 rounded-full bg-primary"></span>
+                                <h3 className="text-[13px] font-bold text-black mb-3 flex items-center gap-2">
+                                    <span className="w-1 h-1 rounded-full bg-black"></span>
                                     진료 시간 안내
                                 </h3>
-                                <div className="space-y-2 text-text/80 text-[11px] leading-relaxed">
+                                <div className="space-y-2 text-[11px] leading-relaxed">
                                     <div className="flex flex-col sm:flex-row sm:gap-4">
-                                        <strong className="block mb-0.5 text-primary min-w-[50px]">평일</strong>
+                                        <strong className="block mb-0.5 min-w-[50px] font-bold">평일</strong>
                                         <div>
                                             <p>오전 9:00 ~ 오후 6:00</p>
-                                            <p className="text-[10px] text-secondary mt-0.5">* 오후 6시이후 7시까지 진료는 사전예약제로만 진행합니다.</p>
+                                            <p className="text-[10px] mt-0.5">* 오후 6시이후 7시까지 진료는 사전예약제로만 진행합니다.</p>
                                         </div>
                                     </div>
                                     <div className="flex flex-col sm:flex-row sm:gap-4">
-                                        <strong className="block mb-0.5 text-primary min-w-[50px]">토요일</strong>
+                                        <strong className="block mb-0.5 min-w-[50px] font-bold">토요일</strong>
                                         <div>
                                             <p>오전 9:00 ~ 오후 3:00</p>
-                                            <p className="text-[10px] text-secondary mt-0.5">* 오후 2시이후 3시까지 진료는 사전예약제로만 진행합니다.</p>
+                                            <p className="text-[10px] mt-0.5">* 오후 2시이후 3시까지 진료는 사전예약제로만 진행합니다.</p>
                                         </div>
                                     </div>
                                     <div className="flex flex-col sm:flex-row sm:gap-4">
-                                        <strong className="block mb-0.5 text-primary min-w-[50px]">점심시간</strong>
+                                        <strong className="block mb-0.5 min-w-[50px] font-bold">점심시간</strong>
                                         <p>오후 1:00 ~ 2:00</p>
                                     </div>
-                                    <div className="text-primary font-medium text-[11px]">
+                                    <div className="font-bold text-[11px]">
                                         일요일, 공휴일 휴진
                                     </div>
                                 </div>
@@ -98,11 +102,11 @@ export default function AboutPage() {
 
                             {/* Reservation Info */}
                             <div>
-                                <h3 className="text-[13px] font-bold text-primary mb-3 flex items-center gap-2">
-                                    <span className="w-1 h-1 rounded-full bg-primary"></span>
+                                <h3 className="text-[13px] font-bold text-black mb-3 flex items-center gap-2">
+                                    <span className="w-1 h-1 rounded-full bg-black"></span>
                                     예약 및 진료 안내
                                 </h3>
-                                <div className="space-y-1.5 text-text/80 leading-relaxed text-[11px]">
+                                <div className="space-y-1.5 leading-relaxed text-[11px]">
                                     <p>
                                         동제당한의원은 환자 한분한분을 보다 세밀하게 진료하기 위해 원칙상 예약제로 운영됩니다.
                                     </p>
@@ -112,7 +116,7 @@ export default function AboutPage() {
                                     <p>
                                         의료진과의 첫상담은 길어질 수 있으니 여유 시간을 한 시간 이상으로 넉넉하게 잡으시길 권장합니다.
                                     </p>
-                                    <p className="pt-1.5 font-medium text-primary">
+                                    <p className="pt-1.5">
                                         그 외에 궁금한 사항은 무엇이든 물어보세요.<br />
                                         항상 열린 마음으로 최선을 다해 답해드리겠습니다.
                                     </p>

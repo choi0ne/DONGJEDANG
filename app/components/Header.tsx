@@ -105,7 +105,7 @@ export default function Header() {
                   <MobileNavLink href="/about" onClick={() => setIsMobileMenuOpen(false)} isSubItem>원장소개</MobileNavLink>
                   <MobileNavLink href="/location" onClick={() => setIsMobileMenuOpen(false)} isSubItem>오시는 길</MobileNavLink>
 
-                  <MobileNavLink href="/about/space" onClick={() => setIsMobileMenuOpen(false)} isSubItem>쉼의 시작, 회복의 공간</MobileNavLink>
+                  <MobileNavLink href="/about/space" onClick={() => setIsMobileMenuOpen(false)} isSubItem>멈춤의 시작, 또다른 시작</MobileNavLink>
                   <MobileNavLink href="/about/medicine" onClick={() => setIsMobileMenuOpen(false)} isSubItem>동제당 청정한약</MobileNavLink>
                 </MobileMenuAccordion>
 
@@ -230,7 +230,7 @@ function NavLinks() {
                   <Link href="/about" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">원장소개</Link>
                   <Link href="/location" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">오시는 길</Link>
 
-                  <Link href="/about/space" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">쉼의 시작, 회복의 공간</Link>
+                  <Link href="/about/space" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">멈춤의 시작, 또다른 시작</Link>
                   <Link href="/about/medicine" className="px-4 py-2 font-nanum text-[15px] leading-[15px] font-normal text-[rgb(0,1,69)] hover:bg-secondary/5 hover:text-primary transition-colors text-center">동제당 청정한약</Link>
                 </div>
               </div>
